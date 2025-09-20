@@ -8,24 +8,37 @@ public class TesteOrdenacao {
         int capacidade =scanner.nextInt();
         while (capacidade > 0) {
             NossoVetor nossoVetor = new NossoVetor(capacidade);
+            //nossoVetor.preencheVetor();
+            //System.out.println("vetor original:\n" + nossoVetor);
+            //long ini = new Date().getTime();
+            //nossoVetor.bubbleSort();
+            //long fim = new Date().getTime();
+
+            //System.out.println("Bubble:\ncapacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
+            //System.out.println("Vetor ordenado pelo Bubble:\n" + nossoVetor);
+            
+            //nossoVetor.preencheVetor();
+            //System.out.println("vetor original:\n" + nossoVetor);
+            //long ini = new Date().getTime();
+            //nossoVetor.insertionSort();
+            //long fim = new Date().getTime();
+
+            //System.out.println("Insertion:\ncapacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
+            //System.out.println("Vetor ordenado pelo Insertion:\n" + nossoVetor);
+            
             nossoVetor.preencheVetor();
             //System.out.println("vetor original:\n" + nossoVetor);
             long ini = new Date().getTime();
-            nossoVetor.bubbleSort();
+            nossoVetor.quickSort(0, nossoVetor.tamanho()-1);
             long fim = new Date().getTime();
-
-            System.out.println("capacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
-            //System.out.println("Vetor ordenado pelo Bubble:\n" + nossoVetor);
+            //System.out.println("Vetor ordenado pelo Quick:\n" + nossoVetor);
+            System.out.println("Quick:\ncapacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
             
-            nossoVetor.preencheVetor();
-            //System.out.println("vetor original:\n" + nossoVetor);
             ini = new Date().getTime();
-            nossoVetor.insertionSort();
+            nossoVetor.quickSort(0, nossoVetor.tamanho()-1);
             fim = new Date().getTime();
-
-            System.out.println("capacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
-            //System.out.println("Vetor ordenado pelo Insertion:\n" + nossoVetor);
-            
+            //System.out.println("Vetor ordenado pelo Quick:\n" + nossoVetor);
+            System.out.println("Quick 2:\ncapacidade: " + capacidade + ", tempo: " + (fim - ini) + " ms");
             
             System.out.print ("\ndigite o tamanho do novo vetor, 0 encerra: ");
             capacidade = scanner.nextInt();

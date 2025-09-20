@@ -137,7 +137,32 @@ public class NossoVetor {
             }
         }
     }
-
+    int partition (int p, int r) { 
+		int x = v[r];     /* O pivô é o último elemento do vetor */
+        int i = p-1;
+		for(int j = p; j < r; j++) {
+	     	if (v[j] <= x) {
+	            i = i + 1;
+	          	int aux = v[i];
+	 	  	    v[i] = v[j]; 
+                v[j] = aux;
+            }
+        }
+        i = i + 1;
+        int aux = v[r]; 
+		v[r] = v[i]; 
+		v[i] = aux;
+		return i;
+    }
+    void quickSort (int p, int r) {
+        //System.out.println ("\np = " + p + ", r = " + r);
+        if (p < r) {
+            int q = partition(p, r);
+            //System.out.println ("\nq = " + q);
+            quickSort(p, q-1);
+            quickSort(q+1, r);
+        }
+    }
     void insertionSort() {
         for (int j = 1; j < v.length; ++j) {
             int x = v[j];
